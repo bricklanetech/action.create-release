@@ -13,10 +13,10 @@ name: Bump Version and Tag
 on:
   push:
     branches:
-      - "master"
-      - "sit"
-      - "alpha"
-      - "sandbox"
+      - 'master'
+      - 'sit'
+      - 'alpha'
+      - 'sandbox'
 jobs:
   build-and-push:
     env:
@@ -28,14 +28,16 @@ jobs:
         uses: actions/checkout@master
       - name: Bump and Tag
         id: bump_and_tag
-        uses: konsentus/action.bump-version-and-tag@master
+        uses: propertylift/action.bump-version-and-tag@master
       - name: Release
         if: github.ref == 'refs/heads/master'
-        uses: konsentus/action.create-release@master
+        uses: propertylift/action.create-release@master
         with:
           new_version_tag: ${{ steps.bump_and_tag.outputs.new_version_tag }}
 ```
+
 ## Environment Variables
+
 - `GITHUB_TOKEN`: The token required to authenticate on Github.
 
 ## Arguments
