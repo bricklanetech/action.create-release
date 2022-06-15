@@ -33,7 +33,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: propertylift/action.create-release@master
         with:
-          new_version_tag: ${{ steps.bump_and_tag.outputs.new_version_tag }}
+          tag: ${{ steps.bump_and_tag.outputs.tag }}
 ```
 
 ## Environment Variables
@@ -42,4 +42,4 @@ jobs:
 
 ## Arguments
 
-- `new_version_tag`: New tag to be released in Github.
+- `tag`: New tag name to be released in Github.

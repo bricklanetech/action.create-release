@@ -8,7 +8,7 @@ printf "The release repository URL is : ${BASE_URL}\n"
 
 printf "Setting new TAG..\n"
 # Try getting $TAG from action input
-TAG=${INPUT_NEW_VERSION_TAG}
+TAG=${INPUT_TAG}
 
 # If all ways of getting the TAG failed, exit with an error
 if [ -z "${TAG}" ]; then
