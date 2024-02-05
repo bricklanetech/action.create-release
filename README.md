@@ -28,10 +28,10 @@ jobs:
         uses: actions/checkout@master
       - name: Bump and Tag
         id: bump_and_tag
-        uses: propertylift/action.bump-version-and-tag@master
+        uses: bricklanetech/action.bump-version-and-tag@master
       - name: Release
         if: github.ref == 'refs/heads/master'
-        uses: propertylift/action.create-release@master
+        uses: bricklanetech/action.create-release@master
         with:
           tag: ${{ steps.bump_and_tag.outputs.tag }}
 ```
